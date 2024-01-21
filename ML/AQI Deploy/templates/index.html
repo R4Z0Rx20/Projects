@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+  <!-- Make it compatible to mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Air Quality Predictor</title>
+  
+  <style>
+body {
+  background-image: url('bg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1 style="color:Black;"><center>Air Quality Predictor</center></h1>
+	
+
+     <!-- Action is where the data is sent. In our case, predict page.
+     If action is omitted, it assumed to be the current page -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<center><input type="text" name="City" placeholder="City" required="required" /><p></center>
+        <center><input type="text" name="Date" placeholder="Date" required="required" /><p></center>
+        <center><input type="text" name="PM2.5" placeholder="PM2.5" required="required" /><p></center>
+        <center><input type="text" name="PM10" placeholder="PM10" required="required" /><p></center>
+        <center><input type="text" name="NO" placeholder="NO" required="required" /><p></center>
+        <center><input type="text" name="NO2" placeholder="NO2" required="required" /><p></center>
+        <center><input type="text" name="NOx" placeholder="NOx" required="required" /><p></center>
+        <center><input type="text" name="NH3" placeholder="NH3" required="required" /><p></center>
+        <center><input type="text" name="CO" placeholder="CO" required="required" /><p></center>
+        <center><input type="text" name="SO2" placeholder="SO2" required="required" /><p></center>
+        <center><input type="text" name="O3" placeholder="O3" required="required" /><p></center>
+        <center><input type="text" name="Benzene" placeholder="Benzene" required="required" /><p></center>
+        <center><input type="text" name="Toluene" placeholder="Toluene" required="required" /><p></center>
+        <center><input type="text" name="Xylene" placeholder="Xylene" required="required" /><p></center>
+
+         <center><button type="submit" class="btn btn-primary btn-block btn-large">Predict the Air Quality Index </button><p></center>
+    </form>
+   <br>
+   <br>
+   <center><h4 style="color:Black;">
+   {{ prediction_text }} </h4></center>
+   
+
+ </div>
+
+
+</body>
+</html>
